@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import SignInCard from "./sign-in-card";
 import SignUpCard from "./sign-up-card";
 import { SignInFlow } from "../types";
-import { Button } from "@/components/ui/button";
 
 export default function AuthScreen() {
   const [state, setState] = useState<SignInFlow>("signIn");
