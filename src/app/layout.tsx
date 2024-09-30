@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
+import Modals from "@/components/modals";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,10 @@ export default function RootLayout({
     <ConvexAuthNextjsServerProvider>
       <html lang='en'>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <Modals />
+            {children}
+          </ConvexClientProvider>
         </body>
       </html>
     </ConvexAuthNextjsServerProvider>
